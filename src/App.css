@@ -1,0 +1,58 @@
+/* import css files */
+@import "./components/square/style.css";
+@import "./components/square-wrapper/style.css";
+
+/* import ggogle font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* tailwind files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* css classes */
+    .root { 
+        @apply 
+            min-h-screen;
+            font-weight: bold;
+            background: radial-gradient(rgb(16, 185, 228), rgb(43, 123, 197));
+    }
+
+    .main {
+        @apply 
+            flex
+            justify-center
+            items-center 
+            h-screen 
+            flex-col
+    }
+
+    .wrapper{
+        @apply 
+            flex 
+            flex-col 
+            gap-4 
+            w-60 
+            mt-8 
+            items-end
+    }
+
+    .status-text {
+        @apply 
+            text-2xl 
+            capitalize  
+            justify-start 
+            text-start 
+            w-full
+    }
+
+    .reset-btn {
+        @apply 
+            py-2 
+            px-8 
+            text-lg 
+            bg-yellow-500 
+            hover:bg-yellow-400 
+            text-white 
+            rounded-md
+    }

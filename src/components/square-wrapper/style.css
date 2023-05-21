@@ -1,0 +1,11 @@
+    .square-wrapper {
+        @apply 
+            flex 
+            flex-wrap 
+            w-64 h-64 
+            text-gray-700 
+            gap-1 
+            p-1 
+            bg-cyan-700 
+            shadow-lg
+    }
