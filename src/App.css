@@ -3,8 +3,7 @@
 @import "./components/square-wrapper/style.css";
 
 /* import ggogle font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
+@import url('https://v1.fontapi.ir/css/Vazir');
 /* tailwind files */
 @tailwind base;
 @tailwind components;
@@ -15,6 +14,7 @@
         @apply 
             min-h-screen;
             font-weight: bold;
+            font-family: vazir;
             background: radial-gradient(rgb(16, 185, 228), rgb(43, 123, 197));
     }
 
