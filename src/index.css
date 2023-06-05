@@ -30,7 +30,7 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-/* import ggogle font */
+/* import vazir font */
 
 /* tailwind files */
 
@@ -610,9 +610,9 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.text-red-600{
+.text-white{
   --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-blue-500{
@@ -620,18 +620,18 @@ video {
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
-.text-white{
+.text-red-600{
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 /* css classes */
 
 .root{
   min-height: 100vh;
-  font-weight: bold;
-  font-family: vazir;
+  font-weight: 700;
   background: radial-gradient(rgb(16, 185, 228), rgb(43, 123, 197));
+  font-family: vazir;
 }
 
 .main{

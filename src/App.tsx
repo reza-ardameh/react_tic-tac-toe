@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { SquareWrapper, Square } from './components'
 import { patterns } from './utils'
-import { calculatWinner } from './helpers'
+import { calculatWinner } from './lib/calculatWinner'
 import { 
   type Dependencies,
   type HandleClick,
@@ -9,9 +9,14 @@ import {
   type SetStateDependenciesAction,
   TextColor,
   TextStatus
-} from './type-checking'
+} from './types'
 
-// App component
+/**
+ * App component
+ *
+ * @export
+ * @return {*}  {JSX.Element}
+ */
 export default function App(): JSX.Element {
 
   // states
@@ -32,7 +37,12 @@ export default function App(): JSX.Element {
     length
   } = dependencies
 
-  //  reset the dependencies state
+
+/**
+ * reset the dependencies state
+ *
+ * @param {SetStateDependenciesAction} setDependencies
+ */
 const handleReset = (setDependencies: SetStateDependenciesAction) => {
   setDependencies(() => ({ 
       squares: Array(9).fill(null),
@@ -43,20 +53,29 @@ const handleReset = (setDependencies: SetStateDependenciesAction) => {
     }))
    }
 
-    //  handle click users
+/**
+ * handle click users
+ *
+ * @param {Params} {
+ *   index,
+ *   setDependencies,
+ *   patterns
+ *  }
+ */
 const handleClick: HandleClick = ({
   index,
-  dependencies,
   setDependencies,
   patterns
  }: Params
   ) => {
 
+    // check The winner has already been determined
  if(winner) {
    
    return
  }
 
+//  check Repeated selection
  if(squares[index]) {
   
   return
@@ -65,15 +84,13 @@ const handleClick: HandleClick = ({
 squares[index] = turn
 
 setDependencies((state: Dependencies) =>
-({ ...state, length: length +1})
-);
-
-setDependencies((state: Dependencies) =>
-({ ...state, squares: squares})
+({ ...state, squares: squares, length: length +1})
 )    
 
+//  calculatWinner
 let calc = calculatWinner( patterns, squares )
 
+ // check There is a winner
 if(calc) {
   setDependencies((state: Dependencies) =>
    ({ ...state, winner: squares[index]})
@@ -82,13 +99,9 @@ if(calc) {
   return
 }
 
+// appointment
 setDependencies((state: Dependencies) =>
- ({ ...state, turn: turn === 'X' ? 'O' : 'X' })
- )
-
-
-setDependencies((state: Dependencies) =>
- ({ ...state, isx: !isX })
+ ({ ...state, isx: !isX , turn: turn === 'X' ? 'O' : 'X'})
  )
 
 }  
@@ -102,6 +115,7 @@ setDependencies((state: Dependencies) =>
         <div>
         <SquareWrapper>
         {
+          // render squares
                 squares.map(
                   (square: null | string, index: number) => 
                  <Square 

@@ -1,4 +1,10 @@
-//  calculat the winner
+ /**
+ * calculate the winner
+ *
+ * @param {number[][]} patterns
+ * @param {((null | string)[])} squares
+ * @return {*} 
+ */
 export const calculatWinner = ( patterns: number[][],squares: (null | string)[] ) => {
 
     for (let i = 0; i < patterns.length; i++) {

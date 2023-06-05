@@ -2,20 +2,31 @@
 @import "./components/square/style.css";
 @import "./components/square-wrapper/style.css";
 
-/* import ggogle font */
+/* import vazir font */
 @import url('https://v1.fontapi.ir/css/Vazir');
+
 /* tailwind files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .bg-radial-gradient {
+        background: radial-gradient(rgb(16, 185, 228), rgb(43, 123, 197));
+    }
+
+    .font-vazir {
+        font-family: vazir;
+    }
+}
+
 /* css classes */
     .root { 
         @apply 
-            min-h-screen;
-            font-weight: bold;
-            font-family: vazir;
-            background: radial-gradient(rgb(16, 185, 228), rgb(43, 123, 197));
+            min-h-screen
+            font-vazir
+            bg-radial-gradient
+            font-bold
     }
 
     .main {

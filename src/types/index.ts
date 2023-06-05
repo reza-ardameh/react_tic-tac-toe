@@ -35,3 +35,10 @@ export enum TextStatus {
     Turn = ' نوبت',
     GameOver = 'بازی تمام'
   }
+
+  export type squrePartialParams = {
+    value: string | null,
+    handleClick: HandleClick
+  }
+  
+  export type squreParams = squrePartialParams & Params
